@@ -15,14 +15,14 @@ class FirstScreen extends StatelessWidget {
             backgroundColor: Colors.blue,
           ),
           body: Center(
-            child: Text('Your Lucky Number ${generateLuckyNumber()}'),
+            child: Text(generateLuckyNumber()),
           ),
         ));
   }
 }
 
-int generateLuckyNumber() {
+String generateLuckyNumber() {
   var random = Random();
   int luckynum = random.nextInt(10);
-  return luckynum;
+  return 'Your Lucky Number $luckynum';
 }
