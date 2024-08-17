@@ -5,25 +5,40 @@ class ListvvewExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("ListView"),
-        ),
-        body: Column(
-          children: [
-            Expanded(child: getListView()),
-            Container(
-              height: 4,
-              color: Colors.amberAccent,
-            ),
-            Expanded(child: simpleList()),
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.add),
-        ),
+    return MaterialApp(home: Home());
+  }
+}
+
+class Home extends StatefulWidget {
+  const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("ListView"),
+      ),
+      body: Column(
+        children: [
+          Expanded(child: getListView()),
+          Container(
+            height: 4,
+            color: Colors.amberAccent,
+          ),
+          Expanded(child: simpleList()),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          final snackBar = SnackBar(content: Text("aehfr"));
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
